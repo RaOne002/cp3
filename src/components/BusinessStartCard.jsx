@@ -69,8 +69,8 @@ const BusinessStartCard = () => {
 
   if (step >= questions.length) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 py-12">
-        <h1 className="text-3xl font-bold text-center text-blue-900 mb-4">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 py-12 px-4 text-center">
+        <h1 className="text-3xl font-bold text-blue-900 mb-4">
           Thanks for your responses!
         </h1>
         <p className="text-gray-700 text-lg">You're all set. We’ll process your answers shortly.</p>
@@ -86,19 +86,19 @@ const BusinessStartCard = () => {
   return (
     <>
       <Navbar step={step} total={questions.length} />
-      <div className="flex flex-col items-center justify-center min-h-screen py-12 bg-gray-50">
-        <div className="flashcard-container z-30">
+      <div className="flex flex-col items-center justify-center min-h-screen py-12 px-4 bg-gray-50">
+        <div className="flashcard-container w-full max-w-md z-30">
           <div className="flashcard">
             <div className="card-number">{step + 1} of {questions.length}</div>
             <div className="card-content">{title}</div>
           </div>
-          <div className="do-you-know">Select your answer:</div>
-          <div className="button-container">
+          <div className="do-you-know mt-4">Select your answer:</div>
+          <div className="button-container mt-2">
             {options.map((label, idx) => (
               <button
                 key={idx}
                 onClick={() => handleSelect(label)}
-                className="flashcard-button"
+                className="flashcard-button w-full mb-2"
               >
                 {label}
               </button>
@@ -111,5 +111,6 @@ const BusinessStartCard = () => {
 };
 
 export default BusinessStartCard;
+
 
 
